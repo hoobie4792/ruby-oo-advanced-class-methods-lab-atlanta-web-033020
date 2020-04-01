@@ -23,8 +23,7 @@ class Song
   end
   
   def self.create_by_name(name)
-    song = self.new
-    song.name = name
+    song = new_by_name(name)
     @@all << song
     song
   end
@@ -50,6 +49,12 @@ class Song
     song = Song.new
     song.artist_name = mp3.split(' - ')[0]
     song.name = mp3.split(' - ')[1].split('.')[0]
+    song
+  end
+  
+  def self.create_from_filename(mp3)
+    song = self.new_from_filename(mp3)
+    @all << song
     song
   end
 end

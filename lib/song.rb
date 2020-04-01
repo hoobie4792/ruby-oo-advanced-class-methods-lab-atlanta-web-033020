@@ -50,5 +50,6 @@ class Song
     song = Song.new
     song.artist_name = mp3.split(' - ')[0]
     song.name = mp3.split(' - ')[1].split('.')[0]
+    song
   end
 end
